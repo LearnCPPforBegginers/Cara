@@ -35,8 +35,9 @@ int main()
 	
 	enterNumbers(arrOfNum, sizeOfArray);//asks input for every element of the array 
 	printNumbers(arrOfNum, sizeOfArray);
-	bubbleSort(arrOfNum, sizeOfArray, sort);//
 	sort = askSortOrder();//ask if you want and how to sort the numbers
+	bubbleSort(arrOfNum, sizeOfArray, sort);//
+	
 	
 	delete[]arrOfNum;
 	return 0;
