@@ -6,27 +6,24 @@
 #include<ctime>
 
 
-///////////////NAMESPACES/////////////////////////////
+/////////////////////NAMESPACES///////////////////////
 
 using namespace std;
 
 ///////////////Function Declaration///////////////////
 
 double askInputAndValidate();
-
 double * arrayOfNumbers(int size);
 
 void enterNumbers(double a[], int b);
-
 void printNumbers(double a[], int b);
+void switchNumber(double * a, double * b);
+void bubbleSort(double arr[], int a, char b);
 
 int * askSizeAndValidate(int * a);
 
-void switchNumber(double * a, double * b);
-
 char askSortOrder();
 
-void bubbleSort(double arr[], int a, char b);
 
 //////////////////////Body of the program/////////////////////
 
@@ -34,9 +31,10 @@ int main()
 {
 	int sizeOfArray = *askSizeAndValidate(&sizeOfArray);//set the size of array
 	double *arrOfNum = arrayOfNumbers(sizeOfArray);//creates a dynamic array
+	char sort = askSortOrder();//ask if you want and how to sort the numbers
+	
 	enterNumbers(arrOfNum, sizeOfArray);//asks input for every element of the array 
 	printNumbers(arrOfNum, sizeOfArray);
-	char sort = askSortOrder();//ask if you want and how to sort the numbers 
 	bubbleSort(arrOfNum, sizeOfArray, sort);//
 
 	delete[]arrOfNum;
@@ -119,6 +117,7 @@ void printNumbers(double a[], int b) //prints every element of the array
 void switchNumber(double *a, double *b)//switches 2 numbers
 {
 	double temp = *a;
+	
 	*a = *b;
 	*b = temp;
 }
