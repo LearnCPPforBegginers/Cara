@@ -31,12 +31,13 @@ int main()
 {
 	int sizeOfArray = *askSizeAndValidate(&sizeOfArray);//set the size of array
 	double *arrOfNum = arrayOfNumbers(sizeOfArray);//creates a dynamic array
-	char sort = askSortOrder();//ask if you want and how to sort the numbers
+	char sort;
 	
 	enterNumbers(arrOfNum, sizeOfArray);//asks input for every element of the array 
 	printNumbers(arrOfNum, sizeOfArray);
 	bubbleSort(arrOfNum, sizeOfArray, sort);//
-
+	sort = askSortOrder();//ask if you want and how to sort the numbers
+	
 	delete[]arrOfNum;
 	return 0;
 }
